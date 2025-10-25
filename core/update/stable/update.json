@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "channel": "stable",
+    "release_notes_url": "1",
+    "release_date": "2025-10-25T07:05:20+00:00",
+    "platforms": {
+        "windows": {
+            "x64": {
+                "download_url": "1",
+                "size_bytes": 1,
+                "sha256": "1"
+            }
+        }
+    },
+    "force_update": false
+}
