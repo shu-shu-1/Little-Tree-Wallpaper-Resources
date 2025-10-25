@@ -1,0 +1,43 @@
+Little Tree Wallpaper Resources License (LTR License)
+
+Copyright (c) 2025 Little Tree Studio
+
+This license applies ONLY to the metadata files (including but not limited to
+.toml, .json, and documentation) in this repository, which serve as a directory
+or index of third-party plugins, themes, and wallpaper sources.
+
+By using, copying, modifying, or distributing any part of this repository,
+you agree to the following terms:
+
+1. **Attribution Requirement**  
+   You MUST clearly credit "Little.Tree.Wallpaper Resources" (or this repository's
+   URL: https://github.com/<your-username>/little-tree-resources) in any
+   application, website, or service that consumes or displays data from this
+   repository.
+
+2. **Non-Commercial Use Only**  
+   You MAY NOT use this repository or its contents for any commercial purpose,
+   including but not limited to:
+   - Bundling with paid software
+   - Using as a data source in a commercial product
+   - Monetizing a service that relies on this metadata
+
+3. **Explicit Permission Required for Third-Party Integration**  
+   If you wish to integrate this repository's data into a third-party application
+   (especially for redistribution or API usage), you MUST obtain prior written
+   permission from the maintainers of Little.Tree.Wallpaper.
+
+4. **No Warranty & No Liability**  
+   The maintainers do NOT guarantee the accuracy, legality, or copyright status
+   of any third-party resource (plugins, themes, wallpapers) referenced herein.
+   All linked content is the sole responsibility of its respective authors and
+   may be governed by different licenses. Users must verify compliance with
+   those licenses independently.
+
+5. **Not an Open Source License**  
+   This license does NOT meet the Open Source Definition (OSD) and is not
+   approved by the Open Source Initiative (OSI). It is a custom, restrictive
+   license for non-commercial, attribution-required use only.
+
+---
+For permission requests, please contact: studio@zsxiaoshu.cn
