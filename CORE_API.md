@@ -128,10 +128,11 @@ core/
 |------|------|------|------|
 | `version` | string | ✅ | 当前最新版本（SemVer） |
 | `channel` | string | ✅ | `stable` / `beta` / `alpha` |
-| `release_notes_url` | string | ✅ | 更新日志链接（建议 GitHub Release） |
+| `release_note` | string(markdown) | ❌ | 更新日志文本 |
+| `release_notes_url` | string | ✅ | 更新日志链接（详细信息或版本发布新闻链接） |
 | `release_date` | ISO 8601 | ✅ | 发布时间 |
 | `platforms.{platform}.{arch}` | object | ✅ | 平台/架构构建信息 |
-| `download_url` | string | ✅ | 下载地址（建议 GitHub Release） |
+| `download_url` | string | ✅ | 下载地址（GitHub Release） |
 | `size_bytes` | integer | ✅ | 文件大小（字节） |
 | `sha256` | string | ✅ | 文件 SHA256（64 位十六进制） |
 | `minimum_supported_version` | string | ❌ | 低于此版本需强制升级 |

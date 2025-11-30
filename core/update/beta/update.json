@@ -1,0 +1,31 @@
+{
+  "version": "1.2.3",
+  "channel": "stable",
+  "release_date": "2025-11-30T09:00:00Z",
+  "release_notes_url": "https://example.com/littletree/1.2.3/notes",
+  "release_note": "- 新增在线壁纸源分类筛选\n- 修复偶发的自动换壁纸失败问题\n- 优化缓存清理体验",
+  "force_update": false,
+  "minimum_supported_version": "1.0.0",
+  "update_supported_version": "1.1.0",
+  "platforms": {
+    "windows": {
+      "x64": {
+        "download_url": "https://example.com/littletree/LittleTreeWallpaperNext-1.2.3-windows-x64.exe",
+        "size_bytes": 183500800,
+        "sha256": "f3e0b92aa2674e10985b63d3b7c4d488f61f980e3d412e731c2dfc7ab4d5ed10"
+      },
+      "arm64": {
+        "download_url": "https://example.com/littletree/LittleTreeWallpaperNext-1.2.3-windows-arm64.exe",
+        "size_bytes": 181193932,
+        "sha256": "5dbf9910d2a4e82bc7d513b1dc4580fd8d3b1cac76f4d21d841c75a6de5b7f30"
+      }
+    },
+    "linux": {
+      "x64": {
+        "download_url": "https://example.com/littletree/LittleTreeWallpaperNext-1.2.3-linux-x64.tar.gz",
+        "size_bytes": 104857600,
+        "sha256": "2a85f83fe3afbcb5a52f7f9981c5a927b2c7a7c8ca723b4942d8b5fb6437a6a1"
+      }
+    }
+  }
+}
