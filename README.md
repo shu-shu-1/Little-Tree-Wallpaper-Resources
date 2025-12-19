@@ -41,6 +41,8 @@ Each file describes:
 The **metadata files in this repository** are licensed under the:  
 > **[Little Tree Wallpaper Resources License (LTR License)](./LICENSE)**
 
+Files stored in `src/` (including code and distributable assets) are provided under the license stated in their corresponding metadata descriptor. If a descriptor references an external project, the original upstream license applies to the files mirrored in `src/`. These files are **not** covered by the LTR License unless explicitly declared.
+
 ### Key Terms:
 - ✅ **Attribution required**: You must credit “Little Tree Wallpaper Resources” when using this data.  
 - ❌ **Non-commercial use only**: No use in paid products or commercial services.  

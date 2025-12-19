@@ -1,0 +1,29 @@
+type = "plugin"
+id = "com.zsxiaoshu.sample"
+name = "示例插件"
+version = "0.1.0"
+summary = "Little Tree Wallpaper 插件 API 的官方示例。"
+
+description_md = """
+## 功能
+
+- 演示插件专属设置页与欢迎语保存
+- 展示权限检查、路由跳转、应用操作调用
+- 订阅下载完成事件并记录日志
+- 使用收藏 API 创建、本地化、导出收藏
+- 提供 Bing 扩展按钮与 Spotlight 操作
+"""
+
+homepage_url = "https://github.com/shu-shu-1/Little-Tree-Wallpaper-Next-Flet"
+repository_url = "https://github.com/shu-shu-1/Little-Tree-Wallpaper-Next-Flet"
+tags = ["example", "demo", "official"]
+
+# 直接提供源码下载，便于查看实现
+# 若后续提供打包文件，可将 download_path 替换为压缩包路径
+
+download_path = "src/sample.py"
+
+[plugin]
+min_client_version = "0.1.0"
+api_version = "1"
+entry = "sample.SamplePlugin"
