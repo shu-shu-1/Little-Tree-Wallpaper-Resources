@@ -1,0 +1,32 @@
+# 壁纸源元数据模板（不要把本文件加入 resources/index.json）
+
+type = "wallpaper_source"
+id = "com.example.wallpaper-source"
+name = "示例壁纸源"
+version = "1.0.0"
+summary = "一句话简介：这个壁纸源提供什么内容"
+
+# 壁纸源协议版本（必填）
+protocol_version = 3
+
+description_md = """
+## 介绍
+
+这是一个示例壁纸源条目。
+
+## 说明
+
+- 壁纸源通常需要提供一个入口地址（API/清单等）
+- 本仓库只存元数据，不托管实际壁纸内容
+"""
+
+# 图标（推荐使用仓库内路径）
+icon_path = "https://wp.zsxiaoshu.cn/favorite.ico"
+
+homepage_url = "https://wp.zsxiaoshu.cn/"
+repository_url = "https://github.com/owner/repo"
+license = "MIT"
+
+author = { name = "Little Tree Studio", url = "https://zsxiaoshu.cn", links = { github = "https://github.com/owner" } }
+
+tags = ["wallpaper", "source"]
