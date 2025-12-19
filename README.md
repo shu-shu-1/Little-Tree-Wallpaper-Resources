@@ -2,14 +2,16 @@
 
 [中文说明](README_zh.md)
 
-> 🌳 A metadata registry for plugins, themes, and wallpaper sources of **Little Tree Wallpaper**.
+> 🌳 A registry for plugins, themes, and wallpaper sources of **Little Tree Wallpaper**.
 
 ---
 
 ## 📌 Purpose
 
-This repository **does NOT contain actual wallpapers, plugins, or themes**.  
-It only provides **metadata files** (in TOML/JSON format) that point to third-party resources hosted elsewhere (e.g., on GitHub).
+This repository provides **metadata files** (TOML/JSON).  
+For v3, it is **recommended** to store distributable files (e.g. plugin/theme packages, icons) under `src/` and reference them by **repo-relative paths**.
+
+This repository still **does NOT host actual wallpaper contents**.
 
 You can think of it as a "**store catalog**" or "**app store index**" for Little Tree Wallpaper.
 

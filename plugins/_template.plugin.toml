@@ -1,0 +1,72 @@
+# 插件元数据模板（不要把本文件加入 plugins/index.json）
+
+type = "plugin"
+id = "com.example.my-plugin"
+name = "我的插件"
+version = "1.0.0"
+summary = "一句话简介：这个插件做什么"
+
+# 详细描述（Markdown）
+description_md = """
+## 介绍
+
+这是一个示例插件。
+
+## 功能
+
+- 功能 A
+- 功能 B
+
+## 使用说明
+
+请在这里写使用方式。
+"""
+
+# 图标（推荐使用仓库内路径 src/…；与 icon_data_uri / icon_base64 二选一/互斥）
+icon_path = "src/icons/my-plugin.png"
+
+# 兼容：外部直链（不推荐）
+# icon_url = "https://example.com/icon.png"
+
+# 或使用 base64（图标字段三选一：icon_url / icon_data_uri / icon_base64+icon_mime；推荐 Data URI）
+# icon_data_uri = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+# 若不使用 Data URI，也可拆分为：
+# icon_mime = "image/png"
+# icon_base64 = "iVBORw0KGgoAAAANSUhEUgAA..."
+
+# 官方网站/仓库（可选）
+homepage_url = "https://example.com"
+repository_url = "https://github.com/owner/repo"
+changelog_url = "https://github.com/owner/repo/releases"
+license = "MIT"
+
+author = { name = "作者名", email = "author@example.com", url = "https://example.com", links = { github = "https://github.com/owner", bilibili = "https://space.bilibili.com/123" } }
+
+tags = ["utility", "integration"]
+
+# 下载（二选一：download_path 或 assets；download_url 仅兼容不推荐）
+download_path = "src/plugins/my-plugin.zip"
+
+# 兼容：外部直链（不推荐）
+# download_url = "https://example.com/download.zip"
+
+[[assets]]
+name = "Windows x64"
+path = "src/plugins/my-plugin-windows-x64.zip"
+url = "" # 不推荐；如确有需要可填外链
+sha256 = ""
+size_bytes = 0
+
+[[assets]]
+name = "Linux x64"
+path = "src/plugins/my-plugin-linux-x64.zip"
+url = "" # 不推荐；如确有需要可填外链
+sha256 = ""
+size_bytes = 0
+
+[plugin]
+min_client_version = "0.1.0"
+max_client_version = "" # 可选：留空表示不限制最大版本
+api_version = "1"
+entry = "my_plugin.entrypoint"
+dependencies = ["com.example.dependency-plugin"]

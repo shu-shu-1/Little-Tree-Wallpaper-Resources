@@ -1,0 +1,306 @@
+# Little Tree Wallpaper Resources - 插件/主题 元数据规范（TOML）
+#
+# 目标：
+# - 用于描述“插件/主题/壁纸源”的资源条目
+# - v3 建议将相关文件（例如插件包/主题包/图标）放入本仓库的 src/ 目录，通过相对路径引用
+# - 程序侧通过对应目录下的 index.json 获取条目清单，再加载每个 .toml
+#
+# 说明：
+# - 本文件本身也是 TOML（可机读），以“字段定义 + 约束 + 示例”的方式描述规范
+# - 其中的描述文本为人类可读；程序可选择性解析 required/type 等字段进行校验
+
+schema_id = "ltw.resources.metadata-spec"
+schema_version = "1.0.0"
+updated_at = "2025-12-17"
+
+[conventions]
+# ID 建议使用“反向域名”风格，避免冲突
+id_recommendation = "reverse-domain" # e.g. com.example.my-plugin
+versioning = "semver"               # e.g. 1.2.3
+
+[index]
+# 索引文件是程序入口（程序先读 index.json，再逐个读取 toml）
+file_name = "index.json"
+format = "json-array-of-filenames"
+example = ["example_plugin.toml", "example_theme.toml"]
+
+# ----------------------------
+# 字段定义（通用）
+# ----------------------------
+
+[fields.type]
+required = true
+type = "string"
+allowed = ["plugin", "theme", "wallpaper_source"]
+description = "资源类型：插件/主题/壁纸源。"
+examples = ["plugin", "theme", "wallpaper_source"]
+
+[fields.id]
+required = true
+type = "string"
+description = "全局唯一 ID。建议使用反向域名风格（com.xxx.yyy）。"
+examples = ["com.zsxiaoshu.sample.plugin", "com.zsxiaoshu.sample.theme"]
+
+[fields.name]
+required = true
+type = "string"
+description = "显示名称。"
+examples = ["示例插件", "示例主题"]
+
+[fields.version]
+required = true
+type = "string"
+description = "版本号（SemVer）。"
+examples = ["1.0.0", "0.3.2"]
+
+[fields.summary]
+required = true
+type = "string"
+description = "一句话简介（用于列表页/卡片）。"
+examples = ["为小树壁纸提供示例功能", "清爽的浅色主题"]
+
+[fields.description_md]
+required = true
+type = "string"
+format = "markdown"
+description = "详细描述，Markdown 格式。建议使用 TOML 多行字符串。"
+examples = ["""## 功能\n\n- 特性 A\n- 特性 B\n"""]
+
+[fields.protocol_version]
+required = false
+type = "int"
+description = "协议版本（仅 wallpaper_source 使用）。例如 3 表示 v3。"
+examples = [3]
+
+[fields.icon_url]
+required = false
+type = "string"
+format = "url"
+description = "图标外部直链（不推荐）。建议优先使用 icon_path（仓库内 src/ 相对路径）或 icon_data_uri。"
+examples = ["https://example.com/icon.png"]
+
+[fields.icon_path]
+required = false
+type = "string"
+format = "repo-relative-path"
+description = "图标文件在仓库内的相对路径（推荐放在 src/ 下），例如 src/icons/xxx.png。"
+examples = ["src/icons/sample.png"]
+
+[fields.icon_data_uri]
+required = false
+type = "string"
+format = "data-uri"
+description = "图标 Data URI（base64）。图标字段需互斥选择：icon_path / icon_url / icon_data_uri / (icon_base64+icon_mime)。例：data:image/png;base64,AAAA..."
+examples = ["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."]
+
+[fields.icon_mime]
+required = false
+type = "string"
+description = "当使用 icon_base64 时的 MIME 类型（例如 image/png、image/svg+xml）。若提供 icon_base64，则 icon_mime 也必须提供。"
+examples = ["image/png", "image/svg+xml"]
+
+[fields.icon_base64]
+required = false
+type = "string"
+description = "图标 base64 内容（不含 data: 前缀）。图标字段需互斥选择：icon_path / icon_url / icon_data_uri / (icon_base64+icon_mime)。建议优先使用 icon_data_uri。"
+examples = ["iVBORw0KGgoAAAANSUhEUgAA..."]
+
+[fields.homepage_url]
+required = false
+type = "string"
+format = "url"
+description = "官方网站/主页链接。"
+examples = ["https://docs.zsxiaoshu.cn"]
+
+[fields.repository_url]
+required = false
+type = "string"
+format = "url"
+description = "源码仓库地址（如 GitHub）。"
+examples = ["https://github.com/owner/repo"]
+
+[fields.license]
+required = false
+type = "string"
+description = "资源本体的许可证标识（若已知），例如 MIT/Apache-2.0/GPL-3.0。"
+examples = ["MIT", "Apache-2.0"]
+
+[fields.author]
+required = false
+type = "table"
+description = "作者信息（简化版）。"
+
+[fields.author.fields]
+name = "string"
+email = "string?"
+url = "string?"
+links = "table<string,string>?" # 自定义链接集合，例如 { github = "...", bilibili = "..." }
+
+[rules.icon]
+description = "图标互斥与依赖规则：四选一；base64 方案需要同时提供 MIME。推荐优先级：icon_path > icon_data_uri > icon_url。"
+
+# 四选一：icon_path 或 icon_url 或 icon_data_uri 或 (icon_base64 + icon_mime)
+one_of = ["icon_path", "icon_url", "icon_data_uri", "icon_base64"]
+
+# 当出现 icon_base64 时，icon_mime 也必须出现
+requires = { icon_base64 = ["icon_mime"] }
+
+[fields.tags]
+required = false
+type = "array<string>"
+description = "标签，用于分类/搜索（程序可选用）。"
+examples = [["utility", "ui"], ["dark", "minimal"]]
+
+[fields.changelog_url]
+required = false
+type = "string"
+format = "url"
+description = "更新日志链接（例如 Release 页面）。"
+examples = ["https://github.com/owner/repo/releases"]
+
+# ----------------------------
+# 下载资源结构
+# ----------------------------
+
+[structures.asset]
+type = "table"
+description = "可下载资产条目（单个文件）。"
+
+[structures.asset.fields]
+name = "string"          # 显示名称，如 Windows x64
+path = "string?"         # 推荐：仓库内相对路径（建议放 src/ 下），例如 src/plugins/a.zip
+url = "string?"          # 不推荐：外部下载直链（兼容保留）
+sha256 = "string?"       # 可选：用于校验
+size_bytes = "int?"      # 可选：字节大小
+
+[fields.download_url]
+required = false
+type = "string"
+format = "url"
+description = "单一外部下载直链（不推荐，兼容保留）。建议使用 download_path 或 assets.path。"
+examples = ["https://example.com/download.zip"]
+
+[fields.download_path]
+required = false
+type = "string"
+format = "repo-relative-path"
+description = "单一下载文件的仓库内相对路径（推荐放在 src/ 下）。与 assets 二选一即可。"
+examples = ["src/plugins/my-plugin.zip", "src/theme/my-theme.zip"]
+
+[fields.assets]
+required = false
+type = "array<table>"
+ref = "structures.asset"
+description = "多资产下载列表（推荐用于多平台/多文件）。"
+
+# ----------------------------
+# 插件扩展字段（可选）
+# ----------------------------
+
+[fields.plugin]
+required = false
+type = "table"
+description = "插件特有字段集合。"
+
+[fields.plugin.fields]
+# 兼容性（程序可选用）
+min_client_version = "string?"  # 支持的小树壁纸客户端最小版本（SemVer）
+max_client_version = "string?"  # 支持的小树壁纸客户端最大版本（SemVer）
+api_version = "string?"      # 插件 API 版本（若有）
+entry = "string?"            # 插件入口标识（若程序侧需要）
+dependencies = "array<string>?" # 依赖的插件 ID 列表（填依赖插件的 id）
+
+# ----------------------------
+# 主题扩展字段（可选）
+# ----------------------------
+
+[fields.theme]
+required = false
+type = "table"
+description = "主题特有字段集合。"
+
+[fields.theme.fields]
+# 可用于展示预览（程序可选用）
+preview_url = "string?"      # 主题预览图直链
+
+# ----------------------------
+# 类型约束：每种类型的必填/可选字段
+# ----------------------------
+
+[types.plugin]
+required = [
+  "type",
+  "id",
+  "name",
+  "version",
+  "summary",
+  "description_md"
+]
+optional = [
+  "icon_url",
+  "icon_path",
+  "icon_data_uri",
+  "icon_mime",
+  "icon_base64",
+  "download_url",
+  "download_path",
+  "assets",
+  "homepage_url",
+  "repository_url",
+  "license",
+  "author",
+  "tags",
+  "changelog_url",
+  "plugin"
+]
+
+[types.theme]
+required = [
+  "type",
+  "id",
+  "name",
+  "version",
+  "summary",
+  "description_md"
+]
+optional = [
+  "icon_url",
+  "icon_path",
+  "icon_data_uri",
+  "icon_mime",
+  "icon_base64",
+  "download_url",
+  "download_path",
+  "assets",
+  "homepage_url",
+  "repository_url",
+  "license",
+  "author",
+  "tags",
+  "changelog_url",
+  "theme"
+]
+
+[types.wallpaper_source]
+required = [
+  "type",
+  "id",
+  "name",
+  "version",
+  "summary",
+  "description_md",
+  "protocol_version"
+]
+optional = [
+  "icon_url",
+  "icon_path",
+  "icon_data_uri",
+  "icon_mime",
+  "icon_base64",
+  "homepage_url",
+  "repository_url",
+  "license",
+  "author",
+  "tags",
+  "changelog_url"
+]
