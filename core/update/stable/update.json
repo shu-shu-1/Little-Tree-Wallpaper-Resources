@@ -1,8 +1,9 @@
 {
     "version": "1.0.2026",
     "channel": "stable",
-    "release_notes_url": "1",
-    "release_date": "2025-10-25T07:05:20+00:00",
+    "release_notes_url": "https://github.com/shu-shu-1/Little-Tree-Wallpaper-Next-Flet/releases/tag/v1.0.2026",
+    "release_note": "# 🎉新年快乐\n\n![小树工作室元旦贺图](https://github.com/user-attachments/assets/26081623-9d2f-4627-bf6f-156d4e3283c2)\n\n## 🟢新增\n\n- 壁纸历史记录\n\n## 🟡修复\n\n- 在Linux系统下无法复制壁纸\n- 在Linux系统下无法更换壁纸\n\n**完整更改记录**: https://github.com/shu-shu-1/Little-Tree-Wallpaper-Next-Flet/compare/v1.0.0...v1.0.2026",
+    "release_date": "2026-01-01T00:46:07+08:00",
     "platforms": {
         "windows": {
             "x64": {
