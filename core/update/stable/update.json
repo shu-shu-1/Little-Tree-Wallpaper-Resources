@@ -1,14 +1,14 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.2026",
     "channel": "stable",
     "release_notes_url": "1",
     "release_date": "2025-10-25T07:05:20+00:00",
     "platforms": {
         "windows": {
             "x64": {
-                "download_url": "1",
-                "size_bytes": 1,
-                "sha256": "1"
+                "download_url": "https://github.com/shu-shu-1/Little-Tree-Wallpaper-Next-Flet/releases/download/v1.0.2026/LittleTreLittleTreeWallpaper-next-1.0.2026-windows-x64.exe",
+                "size_bytes": 64354471,
+                "sha256": "371f9c874ab5d6e54206cf703ca789821c169b643e9c190483cee750d0e7c190"
             }
         }
     },
