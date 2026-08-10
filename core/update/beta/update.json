@@ -1,5 +1,5 @@
 {
-    "version": "2.0.0-beta.1",
+    "version": "2.0.0",
     "channel": "beta",
     "release_notes_url": "https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/tag/v2.0.0-beta.1",
     "release_note": "## 2.0 测试版本 · 其一\n\n### 核心更新\n\n- 新增壁纸制作功能\n\n- 新增动态壁纸功能\n\n- 新增节点图自动化\n\n-新增CNU、拾光壁纸、Pixiv等内容\n\n- 新增更多默认搜索源",
@@ -7,9 +7,9 @@
     "platforms": {
         "windows": {
             "x64": {
-                "download_url": "https://gh-proxy.org/https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/download/v2.0.0-beta.1/LittleTreeWallpaper-win-amd64-Setup-2.0.0-beta.exe",
+                "download_url": "https://gh-proxy.org/https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/download/v2.0.0-beta.1/LittleTreeWallpaper-win-x64-Setup-2.0.0-beta.exe",
                 "size_bytes": 28486479,
-                "sha256": "ed680a04fa351ae160482aa1321a207e235fad5ac59baaabdf51b17a4245ac29"
+                "sha256": "b44a5fc8ff80108cfcda0bab2bf05edd459c676c993b4462e8bdca3059a58f27"
             }
         }
     },
