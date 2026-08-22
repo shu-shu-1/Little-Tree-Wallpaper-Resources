@@ -25,5 +25,6 @@ download_path = "src/sample.py"
 
 [plugin]
 min_client_version = "0.1.0"
+max_client_version = "1.999.999"
 api_version = "1"
 entry = "sample.SamplePlugin"
