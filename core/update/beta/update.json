@@ -1,15 +1,15 @@
 {
-    "version": "2.0.0",
+    "version": "2.0.0-beta2",
     "channel": "beta",
     "release_notes_url": "https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/tag/v2.0.0-beta.1",
-    "release_note": "## 2.0 测试版本 · 其一\n\n### 核心更新\n\n- 新增壁纸制作功能\n\n- 新增动态壁纸功能\n\n- 新增节点图自动化\n\n- 新增CNU、拾光壁纸、Pixiv等内容\n\n- 新增更多默认搜索源",
-    "release_date": "2026-08-10T13:03:47Z",
+    "release_note": "## 2.0 测试版本 · 其二\n\n### 功能\n\n- 添加中国传统色工具\n\n- 支持隐藏部分左栏图标\n\n- 实现资源商店\n\n- 支持通过镜像下载更新\n\n- 支持更多界面的右键\n\n### 优化\n\n- 优化了设置界面 UI\n\n- 优化了更新界面 UI",
+    "release_date": "2026-08-22T09:02:16Z",
     "platforms": {
         "windows": {
             "x64": {
-                "download_url": "https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/download/v2.0.0-beta.1/LittleTreeWallpaper-win-x64-Setup-2.0.0-beta.exe",
+                "download_url": "https://github.com/Little-Tree-Studio/Little-Tree-Wallpaper-Next/releases/download/v2.0.0-beta.2/LittleTreeWallpaper-win-x64-Setup-2.0.0-beta2.exe",
                 "size_bytes": 28486479,
-                "sha256": "b44a5fc8ff80108cfcda0bab2bf05edd459c676c993b4462e8bdca3059a58f27"
+                "sha256": "d892358fc91a744f9e485374815e6a60694c31ce3ca95b378b6e9315a4973eca"
             }
         }
     },
